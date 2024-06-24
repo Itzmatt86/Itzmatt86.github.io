@@ -30,11 +30,13 @@ var init = function (window) {
     }
 
     // TODO 3 / 7 : Call the drawCircle() function
+
+var loopsCompleted = 0;
+for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
     drawCircle();
-    drawCircle();
-    drawCircle();
-    drawCircle();
-    drawCircle();
+}
+
+
 
     ////////////////////////////////////////////////////////////
     ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -73,14 +75,17 @@ var init = function (window) {
         circle.x = 0;
       }
 
-      // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+      if (circle.x < 0) {
+        circle.x = canvas.width;
+      }
 
-      /*
-circle has a circle.x and circle.y for positioning
-canvas is the background, it has a width and height
-The miniumum W and H can be are zero
-The maximum W and H can be are .width and .height
-*/
+      if (circle.y > canvas.height) {
+        circle.y = 0;
+      }
+
+      if (circle.y < 0) {
+        circle.y = canvas.height;
+      }
 
       // YOUR TODO 6 CODE ENDS HERE //////////////////////////
     };

@@ -30,7 +30,7 @@ function runProgram() {
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL); // execute newFrame every 0.0166 seconds (60 Frames per second)
   // change 'eventType' to the type of event you want to handle
   $(document).on("keydown", handleKeyDown);
-
+  $(document).on("keyup", handleKeyUp);
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -39,25 +39,71 @@ function runProgram() {
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
-  function newFrame() {}
+  function newFrame() {
+    repositionGameItem();
+    wallCollision();
+    redrawGameItem();
+  }
 
   /* 
   Called in response to events.
   */
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT) {
-      console.log("Left Pressed");
+      walker.Xspeed = -5;
     }
-    console.log(event.key);
+    if (event.which === KEY.UP) {
+      walker.Yspeed = -5;
+    }
+    if (event.which === KEY.RIGHT) {
+      walker.Xspeed = 5;
+    }
+    if (event.which === KEY.DOWN) {
+      walker.Yspeed = 5;
+    }
   }
 
+  function handleKeyUp(event) {
+    if (
+      event.which === KEY.LEFT ||
+      event.which === KEY.UP ||
+      event.which === KEY.RIGHT ||
+      event.which === KEY.DOWN
+    ) {
+      walker.Xspeed = 0;
+      walker.Yspeed = 0;
+    }
+  }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-  function repositionGameItem() {}
+  function repositionGameItem() {
+    walker.X = walker.X + walker.Xspeed;
+    walker.Y = walker.Y + walker.Yspeed;
+  }
 
-  function redrawGameItem() {}
+  function redrawGameItem() {
+    $("#walker").css("left", walker.X);
+    $("#walker").css("top", walker.Y);
+  }
+
+  function wallCollision() {
+    var bWidth = $("#board").width() - 50;
+    var bHeight = $("#board").height() - 50;
+    if (walker.X < 0) {
+      walker.X = 0;
+    }
+    if (walker.X > bWidth) {
+      walker.X = bWidth;
+    }
+    if (walker.Y < 0) {
+      walker.Y = 0;
+    }
+    if (walker.Y > bHeight) {
+      walker.Y = bHeight;
+    }
+  }
 
   function endGame() {
     // stop the interval timer
@@ -67,3 +113,4 @@ function runProgram() {
     $(document).off();
   }
 }
+

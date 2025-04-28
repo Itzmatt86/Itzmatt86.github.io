@@ -24,9 +24,9 @@ function applyAndRender() {
   //applyFilter(decreaseBlue);
   //applyFilter(increaseGreenByBlue);
   
-  //applyFilterNoBackground(reddify);
-  applyFilterNoBackground(decreaseBlue);
-  applyFilterNoBackground(increaseGreenByBlue);
+  applyFilterNoBackground(reddify);
+  //applyFilterNoBackground(decreaseBlue);
+  //applyFilterNoBackground(increaseGreenByBlue);
 
 
   // do not change the below line of code

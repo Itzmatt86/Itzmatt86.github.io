@@ -4,7 +4,7 @@ img {
 }
 
 body {
-  /* background-image: url("Z_GollumThinking.gif"); */
+  background-color: rgb(0, 0, 0);
   color: rgb(45, 45, 45);
   padding: 10px;
   font-family: Arial, sans-serif;

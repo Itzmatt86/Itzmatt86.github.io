@@ -53,6 +53,8 @@
 
         // Every time the box is clicked, call the handleBoxClick Function (see below)
         box.on("click", handleBoxClick);
+        //WHAT.WHERE("WHEN", DO);
+        //When you click on the box, run the handleBoxClick function
 
         // moves the Box to a new position on the screen along the X-Axis
         function moveBoxTo(newPositionX) {
@@ -69,10 +71,9 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-
-
-
-
+        var positionX = 0;
+        var points = 0;
+        var speed = 10;
 
         /**
          * This Function will be called 20 times/second.
@@ -80,10 +81,8 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
-        
-
-          
+          moveBoxTo(positionX);
+          positionX = positionX + speed;
         }
 
         /**
@@ -94,14 +93,11 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-
-
-
-
+          positionX = 0;
+          points = points + 1;
+          speed = speed + 2;
+          changeBoxText(points);
         }
-
-
-        
       })();
     </script>
   </body>

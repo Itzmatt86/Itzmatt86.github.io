@@ -37,9 +37,9 @@ createPlatform(400, 700, 100, 100,)
 
     // TODO 3 - Create Collectables
 //createCollectable("name", xPos, yPos, GravityNum, BounceNum)
-createCollectable("blob", 100, 0, 0.1, 1)
-createCollectable("blob", 200, 0, 0.1, 1)
-createCollectable("blob", 300, 0, 0.1, 1)
+createCollectable("database", 100, 0, 0.1, 1)
+createCollectable("database", 200, 0, 0.1, 1)
+createCollectable("database", 300, 0, 0.1, 1)
 
     
     // TODO 4 - Create Cannons

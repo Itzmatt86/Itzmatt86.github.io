@@ -29,20 +29,17 @@ $(function () {
     // TODO 1 - Enable the Grid
   //toggleGrid();
 
-
     // TODO 2 - Create Platforms
-createPlatform(100, 650, 50, 10,)
-createPlatform(200, 550, 50, 10,)
-createPlatform(300, 450, 50, 10,)
-createPlatform(400, 350, 50, 10,)
-createPlatform(500, 250, 50, 10,)
+createPlatform(500, 0, 1, 800,) //Invis Wall in mid
+           //  x     y    w   h
+createPlatform(400, 700, 100, 100,)
 
 
     // TODO 3 - Create Collectables
 //createCollectable("name", xPos, yPos, GravityNum, BounceNum)
-createCollectable("database", 100, 0, 0.1, 1)
-createCollectable("database", 200, 0, 0.1, 1)
-createCollectable("database", 300, 0, 0.1, 1)
+createCollectable("blob", 100, 0, 0.1, 1)
+createCollectable("blob", 200, 0, 0.1, 1)
+createCollectable("blob", 300, 0, 0.1, 1)
 
     
     // TODO 4 - Create Cannons
@@ -50,17 +47,7 @@ createCannon("top", 300, 1000);
 createCannon("left", 400, 2000);
 
     
-   var bgm = new Audio("AUDIO PATH"); // replace with the actual path to your mp3
-bgm.loop = true; // keeps playing in a loop
-bgm.volume = 0.5; // optional: volume between 0.0 and 1.0
 
-window.playAudio = function () {
-  if (bgm.paused) {
-    bgm.play();
-  } else {
-    bgm.pause();
-  }
-};
  
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
@@ -69,3 +56,18 @@ window.playAudio = function () {
 
   registerSetup(setup);
 });
+
+
+   var bgm = new Audio("14 My Heart Will Go On.mp3"); // replace with the actual path to your mp3
+bgm.loop = true; // keeps playing in a loop
+bgm.volume = 1; // optional: volume between 0.0 and 1.0
+
+window.playAudio = function () {
+  if (bgm.paused) {
+    bgm.play();
+  } else {
+    bgm.pause();
+  }
+};
+
+// Music to not be mp3

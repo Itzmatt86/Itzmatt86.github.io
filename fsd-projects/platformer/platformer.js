@@ -58,7 +58,7 @@ createCannon("left", 400, 2000);
 });
 
 
-   var bgm = new Audio("14 My Heart Will Go On.mp3"); // replace with the actual path to your mp3
+var bgm = new Audio("Titanic.mp3"); // replace with the actual path to your mp3
 bgm.loop = true; // keeps playing in a loop
 bgm.volume = 1; // optional: volume between 0.0 and 1.0
 
@@ -69,5 +69,3 @@ window.playAudio = function () {
     bgm.pause();
   }
 };
-
-// Music to not be mp3

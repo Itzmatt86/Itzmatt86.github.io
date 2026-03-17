@@ -30,20 +30,19 @@ $(function () {
     toggleGrid();
 
 
-    // TODO 2 - Create Platforms
-    //createPlatform(xPos, yPos, Width, Height, "Color")
-
-    createPlatform(100-2, 700-2, 4, 4, "black");
-    createPlatform(200-2, 600-2, 4, 4, "black");
-    createPlatform(300-2, 500-2, 4, 4, "black");
-    createPlatform(400-2, 400-2, 4, 4, "black");
+    
+createPlatform(100, 700, 10, 50, "black", 0, canvas.width, 0, 0, canvas.height, 2);    createPlatform(200, 600, 10, 50, "black");
+    createPlatform(300, 500, 10, 50, "black");
+    createPlatform(400, 400, 10, 50, "black");
+    createPlatform(500, 300, 10, 50, "black");
+    createPlatform(600, 200, 10, 50, "black");
 
 
     // TODO 3 - Create Collectables
     //createCollectable("name", xPos, yPos, gravity, bounce)
 
 
-createCollectable("database", 180, 100, 0.1, 1);
+createCollectable("database", 180, 100, 0.1, 1, 0, 1000, 1);
 createCollectable("database", 280, 100, 0.1, 1);
 createCollectable("database", 380, 100, 0.1, 1);
 createCollectable("database", 480, 100, 0.1, 1);

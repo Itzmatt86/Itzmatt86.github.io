@@ -52,6 +52,7 @@ function runProgram() {
   */
   function newFrame() {
     repositionGameItem();
+    wallCollision()
     redrawGameItem();
   }
 
@@ -100,6 +101,16 @@ function handleKeyUp(event) {
     $("#walker").css("left", walker.X);
     $("#walker").css("top", walker.Y);
   }
+
+function wallCollision() {
+  var bWidth = $("#board").width() - 50
+  var bHeight = $("#board").height() - 50
+  if (walker.X < 0) {walker.X = 0}
+  if (walker.Y < 0) {walker.Y = 0}
+  if (walker.X > bWidth) {walker.X = bWidth}
+  if (walker.Y > bHeight) {walker.Y = bHeight}
+}
+
 
   function endGame() {
     // stop the interval timer
